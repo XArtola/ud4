@@ -7,7 +7,7 @@
 
 <body>
 
-    <h1 @isset($nombre) style="color:#{{$color}}" @endisset >Kaixo  @isset($nombre) {{$nombre}} @endisset</h1>
+    <h1 @isset($color) style="color:#{{$color}}" @endisset >Kaixo  @isset($nombre) {{$nombre}} @endisset</h1>
 </body>
 
 </html>

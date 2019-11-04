@@ -24,12 +24,12 @@ Route::get('/4.1/contacto', function () {
 });
 
 Route::get('4.1/blog/{id}', function ($id) {
-    return view('blog', ['id'=>$id]);
+    return view('blog', ['id' => $id]);
 });
 
 Route::get('/4.1/blog/{id}/{nombre}', function ($id, $nombre) {
     return view('blog', ['id' => $id, 'nombre' => $nombre]);
-})->where(array('id'=>'[0-9]+', 'nombre'=>'[A-Za-z]+'));
+})->where(array('id' => '[0-9]+', 'nombre' => '[A-Za-z]+'));
 
 Route::get('/4.2', function () {
     return view('4_2');
@@ -37,11 +37,14 @@ Route::get('/4.2', function () {
 
 Route::get('/saludo/{nombre?}/{color?}', 'SaludoController@saludar')->name('saludar');
 
-
 Route::get('/4.3', function () {
     return view('4_3');
 });
+
+Route::get('/saludoForm', 'SaludoController@saludarForm')->name('saludar2');
+Route::post('/saludoForm', 'SaludoController@saludarFormMulti')->name('saludar3');
+
+
 Route::get('/4.4', function () {
     return view('4_4');
 });
-
