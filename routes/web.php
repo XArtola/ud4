@@ -34,6 +34,10 @@ Route::get('/4.1/blog/{id}/{nombre}', function ($id, $nombre) {
 Route::get('/4.2', function () {
     return view('4_2');
 });
+
+Route::get('/saludo/{nombre?}/{color?}', 'SaludoController@saludar')->name('saludar');
+
+
 Route::get('/4.3', function () {
     return view('4_3');
 });
