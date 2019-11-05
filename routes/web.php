@@ -43,7 +43,10 @@ Route::get('/4.3', function () {
 
 Route::get('/saludoForm', 'SaludoController@saludarForm')->name('saludar2');
 Route::post('/saludoForm', 'SaludoController@saludarFormMulti')->name('saludar3');
-
+Route::post('/saludoForm2', 'SaludoController@saludarFormMulti2')->name('saludar4');
+Route::get('/4.3.2', function () {
+    return view('4_3_2');
+});
 
 Route::get('/4.4', function () {
     return view('4_4');

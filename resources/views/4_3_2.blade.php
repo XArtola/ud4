@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>
+    <h1>Saludo multi idiomas</h1>
+    <form method="POST" action="{{route('saludar4')}}">
+        @csrf
+        <label>Nombre</label>
+        <input name="campoNombre" type="text">
+        <label>Apellido</label>
+        <input name="apellido" type="text">
+        <input type="submit">
+    </form>
 
-    <h1 @isset($color) style="color:#{{$color}}" @endisset>Kaixo @isset($nombre) {{$nombre}} @endisset</h1>
 
     @isset($saludos)
 
@@ -15,7 +23,6 @@
     <p>{{ $saludo." ".$nombre}}</p>
     @endforeach
     @endisset
-
 </body>
 
 </html>

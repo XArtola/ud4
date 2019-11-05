@@ -20,17 +20,25 @@ class SaludoController extends Controller
     function saludarForm(Request $request)
     {
 
-       $nombre = $request->input('campoNombre')." ".$request->input('apellido');
-       
+        $nombre = $request->input('campoNombre') . " " . $request->input('apellido');
+
         return view('saludo', ['nombre' => $nombre]);
     }
 
     function saludarFormMulti(Request $request)
     {
 
-       $nombre = $request->input('campoNombre')." ".$request->input('apellido');
+        $nombre = $request->input('campoNombre') . " " . $request->input('apellido');
+        $jsonString = file_get_contents(base_path('public/assets/saludos.json'));
+        $saludos = json_decode($jsonString, true);
+        return view('saludo', ['nombre' => $nombre, 'saludos' => $saludos]);
+    }
+    function saludarFormMulti2(Request $request)
+    {
 
-     $saludos = json_decode ( , true);
-        return view('saludo', ['nombre' => $nombre]);
+        $nombre = $request->input('campoNombre') . " " . $request->input('apellido');
+        $jsonString = file_get_contents(base_path('public/assets/saludos.json'));
+        $saludos = json_decode($jsonString, true);
+        return view('4_3_2', ['nombre' => $nombre, 'saludos' => $saludos]);
     }
 }
