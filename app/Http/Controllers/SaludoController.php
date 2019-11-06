@@ -33,6 +33,7 @@ class SaludoController extends Controller
         $saludos = json_decode($jsonString, true);
         return view('saludo', ['nombre' => $nombre, 'saludos' => $saludos]);
     }
+    
     function saludarFormMulti2(Request $request)
     {
 
@@ -41,4 +42,5 @@ class SaludoController extends Controller
         $saludos = json_decode($jsonString, true);
         return view('4_3_2', ['nombre' => $nombre, 'saludos' => $saludos]);
     }
+
 }

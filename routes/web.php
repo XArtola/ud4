@@ -51,3 +51,7 @@ Route::get('/4.3.2', function () {
 Route::get('/4.4', function () {
     return view('4_4');
 });
+Route::get('/4.4', function () {
+    return view('4_4');
+});
+Route::post('/validacion','ValidacionController@validarForm')->name('validar');
