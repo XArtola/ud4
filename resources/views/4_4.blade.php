@@ -10,16 +10,34 @@
     <form method="POST" action="{{route('validar')}}">
         @csrf
         <label>Nombre</label>
-        <input name="campoNombre" type="text"><br>
+        <input name="campoNombre" type="text" value="{{old('campoNombre')}}">@if ($errors->has('campoNombre'))
+        <span>{{ $errors->first('campoNombre')}}</span>
+        @endif<br>
         <label>Apellido</label>
-        <input name="apellido" type="text"><br>
+        <input name="apellido" type="text" value="{{old('apellido')}}">@if ($errors->has('apellido'))
+        <span>{{ $errors->first('apellido')}}</span>
+        @endif<br>
         <label>Email</label>
-        <input name="email" type="email"><br>
+        <input name="email" type="email" value="{{old('email')}}">@if ($errors->has('email'))
+        <span>{{ $errors->first('email')}}</span>
+        @endif<br>
         <label>Teléfono</label>
-        <input name="telefono" type="tel"><br>
+        <input name="telefono" type="tel" value="{{old('telefono')}}">@if ($errors->has('telefono'))
+        <span>{{ $errors->first('telefono')}}</span>
+        @endif<br>
         <input type="submit">
     </form>
-
+    <!--
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+-->
 </body>
 
 </html>
