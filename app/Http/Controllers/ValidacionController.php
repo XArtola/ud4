@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactoRequest;
-
+use App\Rules\dni;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -38,7 +38,12 @@ class ValidacionController extends Controller
     function validarForm(ContactoRequest $request)
     {
 
+        $validatedData = $request->validate([
 
-        return view('infoForm', ['nombre' => $request->campoNombre, 'apellido' => $request->apellido, 'email' => $request->email, 'telefono' => $request->telefono]);
+            'dni' =>  ['required','regex:/^\d{8}[A-Z]$/i', new dni]
+
+        ]);
+
+        return view('infoForm', ['nombre' => $request->campoNombre, 'apellido' => $request->apellido, 'email' => $request->email, 'telefono' => $request->telefono, 'dni' => $request->dni]);
     }
 }

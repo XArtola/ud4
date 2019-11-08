@@ -31,22 +31,20 @@ class ContactoRequest extends FormRequest
             'apellido' => 'required|min:2|max:20',
             'email' => 'required|email',
             'telefono' => 'nullable|regex:/^[67][0-9]{8}$/'
-
+            
         ];
     }
 
     public function messages()
     {
 
-        [
+        return [
             'required'    => 'El :attribute es obligatorio.',
             'min'    => 'El :attribute debe tener como mínimo :min caracteres.',
             'max'    => 'El :attribute debe tener como máximo :min caracteres.',
             'email' => 'Email no válido',
-            'regex'      => 'El número :attribute es invalido',
+            'telefono.regex'      => 'El campo :attribute es invalido',
+
         ];
-
-
-
-     }
+    }
 }

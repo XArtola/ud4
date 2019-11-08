@@ -10,6 +10,7 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
+    'dni'             => ':attribute ez da zuzena, zenbakiak eta letra ez datoz bat',
     'accepted'             => ':attribute onartu beharra dago.',
     'active_url'           => ':attribute ez da baliozko URL bat.',
     'after'                => ':attribute :date osteko data izan behar da.',

@@ -25,6 +25,10 @@
         <input name="telefono" type="tel" value="{{old('telefono')}}">@if ($errors->has('telefono'))
         <span>{{ $errors->first('telefono')}}</span>
         @endif<br>
+        <label>Dni</label>
+        <input name="dni" type="text" value="{{old('dni')}}">@if ($errors->has('dni'))
+        <span>{{ $errors->first('dni')}}</span>
+        @endif<br>
         <input type="submit">
     </form>
     <!--
